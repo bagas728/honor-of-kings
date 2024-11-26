@@ -817,14 +817,33 @@ body {
 
   
   
-  @media (max-width: 768px) {
-    .game-section {
-        background-attachment: scroll; /* Fixes background scrolling issues on mobile */
-        background-image: url(../img/kv.jpg); /* Optional: alternative image for mobile */
-        padding: 50px 0;
-    }
-}
+  
+@media screen and (max-width: 1200px) {
+  
 
+  .fallback .game-section {
+      background-image: url(/img/m_kv-575dfea7.jpg)
+  }
+
+  .webp .game-section {
+      background-image: url(/img/m_kv-ba61c186.webp)
+  }
+
+  .avif .game-section {
+      background-image: url(/img/m_kv-1bf20eba.avif)
+  }
+
+  .pc_hh {
+      display: none
+  }
+
+  .scale {
+      height: 100%;
+      transform: none
+  }
+
+  
+}
 @media (max-width: 768px) {
   .game-section h1 {
       font-size: 2rem; /* Smaller font size for smaller screens */
