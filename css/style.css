@@ -822,15 +822,15 @@ body {
   
 
   .fallback .game-section {
-      background-image: url(/img/m_kv-575dfea7.jpg)
+      background-image: url(../img/m_kv-575dfea7.jpg)
   }
 
   .webp .game-section {
-      background-image: url(/img/m_kv-ba61c186.webp)
+      background-image: url(../img/m_kv-ba61c186.webp)
   }
 
   .avif .game-section {
-      background-image: url(/img/m_kv-1bf20eba.avif)
+      background-image: url(../img/m_kv-1bf20eba.avif)
   }
 
   .pc_hh {
