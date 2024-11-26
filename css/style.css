@@ -261,7 +261,7 @@ background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
 /* Latar belakang untuk bagian Berita */
 .hok_news {
   padding: 100px 0;
-  background-image: url(/img/bg1.jpg); /* Gambar latar */
+  background-image: url(../img/bg1.jpg); /* Gambar latar */
   background-size: cover; /* Mengisi seluruh area */
   background-position: center;
   background-attachment: fixed; /* Agar gambar tetap di posisi saat di-scroll */
@@ -408,7 +408,7 @@ background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
   width: 100%;
   height: auto;   
   margin-top: 30px; /* Tambahkan jarak di atas tombol */
-  background: url(/img/more_line.png) no-repeat;
+  background: url(../img/more_line.png) no-repeat;
   background-size: calc(1704 / var(--screen-width) * var(--screen-maxwidth)) calc(7 / var(--screen-width) * var(--screen-maxwidth));
   background-position: 50% calc(21 / var(--screen-width) * var(--screen-maxwidth));
 }
@@ -660,7 +660,7 @@ body {
 
 .game-section {
   position: relative;
-  background-image: url(/img/kv.jpg); /* Replace with the URL of your new background image */
+  background-image: url(../img/kv.jpg); /* Replace with the URL of your new background image */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* This will create the parallax effect */
@@ -820,7 +820,7 @@ body {
   @media (max-width: 768px) {
     .game-section {
         background-attachment: scroll; /* Fixes background scrolling issues on mobile */
-        background-image: url(/img/kv.jpg); /* Optional: alternative image for mobile */
+        background-image: url(../img/kv.jpg); /* Optional: alternative image for mobile */
         padding: 50px 0;
     }
 }
@@ -1169,7 +1169,7 @@ img, video {
   align-items: center;
   gap: 40px; /* Jarak antara gambar dan video */
   background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
-  background-image: url(/img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+  background-image: url(../img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
   background-position: center; /* Menempatkan gambar di tengah */
   background-repeat: no-repeat; /* Menghindari pengulangan gambar */
 }
@@ -1285,7 +1285,7 @@ img, video {
       padding: 0;
       gap: 0;
       background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
-      background-image: url(/img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+      background-image: url(../img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
       background-position: center;
       background-repeat: no-repeat;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1394,7 +1394,7 @@ img, video {
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: url(/img/pt5.jpg);
+  background-image: url(../img/pt5.jpg);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1739,7 +1739,7 @@ img, video {
 /* Bagian Utama Cerita Kami */
 .our-story-section {
   padding: 100px 0;
-  background-image: url(/img/bg1.jpg); /* Ganti dengan path gambar Anda */
+  background-image: url(../img/bg1.jpg); /* Ganti dengan path gambar Anda */
   background-size: cover; /* Menutupi seluruh area */
   background-position: center; /* Memusatkan gambar */
   background-attachment: fixed; /* Memberikan efek parallax pada background */
@@ -2273,7 +2273,7 @@ body .hok_head .hok_stbox a {
 .hok_store {
   width: 100%;
   height: calc(228 / var(--screen-width2)* var(--screen-maxwidth));
-  background: url(/img/m_bot_store-9bd65d81.jpg) no-repeat 100% / 100%;
+  background: url(../img/m_bot_store-9bd65d81.jpg) no-repeat 100% / 100%;
   transform: translateY(-1px);
 }
 .hok_store_btnbox {
