@@ -817,7 +817,19 @@ body {
 
   
   
-  
+  @media (max-width: 768px) {
+    .fallback .game-section {
+      background-image: url(../img/m_kv-575dfea7.jpg)
+  }
+
+  .webp .game-section {
+      background-image: url(../img/m_kv-ba61c186.webp)
+  }
+
+  .avif .game-section {
+      background-image: url(../img/m_kv-1bf20eba.avif)
+  }
+    }
 @media screen and (max-width: 1200px) {
   
 
