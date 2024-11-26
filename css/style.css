@@ -1,0 +1,2333 @@
+@charset "UTF-8";
+
+/*
+
+Style   : MobApp CSS
+Version : 1.0
+Author  : Surjith S M
+URI     : https://surjithctly.in/
+
+Copyright © All rights Reserved 
+
+*/
+
+
+/*------------------------
+[TABLE OF CONTENTS]
+    
+1. GLOBAL STYLES
+2. NAVBAR
+3. HERO
+4. TABS
+5. TESTIMONIALS
+6. IMAGE GALLERY
+7. PRICING
+8. CALL TO ACTION
+9. FOOTER
+
+------------------------*/
+
+
+/* Warna Tema */
+:root {
+  --primary-color: #ffd700; /* Emas */
+  --dark-bg: #120d1e; /* Latar belakang gelap */
+  --text-color: #ffffff; /* Warna teks */
+  --accent-color: #2c2f54; /* Accent for highlights */
+  --light-grey: #ccc; /* Secondary text color */
+  --screen-width: 1920;
+  --screen-width2: 1920;
+  --screen-maxwidth: 100vw;
+
+}
+@media screen and (min-width: 1921px) {
+    :root {
+      --screen-maxwidth: 1920px;
+    }
+  }
+  @media screen and (max-width: 1920px) {
+    :root {
+      --screen-maxwidth: 100vw;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    :root {
+      --screen-width: 900;
+      --screen-width2: 900;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    :root {
+      --screen-width: 750;
+      --screen-width2: 750;
+    }
+  }
+  @media screen and (min-width: 1500px) {
+    :root {
+      --screen-width: 2100;
+    }
+  }
+  @media screen and (min-width: 2500px) {
+    :root {
+      --screen-maxwidth: 95vw;
+    }
+  }
+  @media screen and (max-width: 600px) and (max-height: 600px) {
+    :root {
+      --screen-width: 750;
+      --screen-width2: 750;
+    }
+  }
+  @media screen and (max-width: 900px) and (max-height: 600px) {
+    :root {
+      --screen-width: 1334;
+      --screen-width2: 1000;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    :root {
+      --screen-width: 750;
+      --screen-width2: 750;
+    }
+  }
+
+
+          /*  NAVBAR  */
+
+
+/* Styling Umum untuk Navbar dan Footer */
+.nav-menu {
+  background: linear-gradient(135deg, #1a237e, #ffcc00, #1a237e);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.nav-link{ 
+  padding-top: 18px;
+  padding-right: 18px;
+  margin-right: 12px;
+  margin-top: 16px;
+
+}
+
+.nav-link:hover, .btn-outline-light:hover {
+  background-color: #ffcc00;
+  color: #1a1a1d;
+  box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.5);
+  
+}
+
+.btn-outline-light {
+position: relative;
+overflow: hidden;
+top: 21%;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-outline-light:before {
+content: '';
+position: absolute;
+top: 0;
+
+background-color: rgba(255, 204, 0, 0.5);
+transition: left 0.3s ease;
+}
+.btn-outline-light:hover:before {
+left: 0;
+}
+
+
+.compra_btn {
+  float: right;
+  font-size: 10.5px;
+  color: #b7b7b7;
+  line-height: 34.5px;
+  padding-top: 18px;
+  padding-right: 18px;
+  height: 66px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.compra_icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../img/compra_icon.png) no-repeat 100%/100%;
+  margin-right: 12px;
+}
+.nv_camp_btn {
+  display: block;
+  width: 160px;
+  height: 35.2px;
+  background: url(../img/camp_icon.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 12px;
+  margin-top: 16px;
+  float: right;
+}
+/* --VIDEO HEADER-- */
+
+.video-header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Tinggi layar penuh */
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Memastikan video memenuhi seluruh kontainer */
+    z-index: -1; /* Menjaga video di latar belakang */
+}
+
+/* Overlay yang menampung konten */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.3); /* Lapisan gelap untuk meningkatkan kontras teks */
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Menempatkan tombol di tengah bawah layar */
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px; /* Jarak dari bagian bawah layar */
+  left: 50%; /* Mengatur tombol di tengah secara horizontal */
+  transform: translateX(-50%); /* Memposisikan tepat di tengah */
+  width: 50px; /* Ukuran tombol lebih kecil */
+  height: 50px;
+background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%; /* Bentuk bulat */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  opacity: 0.5;
+  z-index: 1000;
+  transition: opacity 0.3s, transform 0.3s; /* Transisi saat dihover */
+  
+}
+
+#backToTopBtn:hover {
+  opacity: 1; /* Tombol menjadi sepenuhnya terlihat saat dihover */
+  transform: translateX(-50%) scale(1.1); /* Sedikit membesar dan tetap di tengah */
+}
+
+#backToTopBtn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+                                  /* BERITA */
+
+
+
+/* Styling untuk Bagian Berita */
+/* Latar belakang untuk bagian Berita */
+.hok_news {
+  padding: 100px 0;
+  background-image: url(/img/bg1.jpg); /* Gambar latar */
+  background-size: cover; /* Mengisi seluruh area */
+  background-position: center;
+  background-attachment: fixed; /* Agar gambar tetap di posisi saat di-scroll */
+  color: var(--text-color);
+  position: relative;
+  text-align: center;
+  box-shadow: inset 0px 80px 80px -60px rgba(242, 190, 0, 0.5), /* Cahaya atas */
+                inset 0px -80px 80px -60px rgba(242, 190, 0, 0); /* Cahaya bawah */
+}
+
+/* Overlay gelap untuk meningkatkan keterbacaan teks */
+.hok_news::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+  z-index: 1;
+}
+
+.hok_news * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hok_news_tit1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #f2c94c;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 100px !important; /* Meningkatkan jarak antar elemen setelah judul */
+  padding-top: 20px !important; /* Meningkatkan jarak atas */
+  padding-bottom: 120px !important; /* Meningkatkan jarak bawah */
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #f2c94c, #e6b800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.hok_news_tit1:hover {
+    color: #ffffff; /* Warna putih saat dihover */
+    text-shadow: 2px 2px 12px rgba(242, 201, 76, 0.8); /* Bayangan emas saat dihover */
+    transform: scale(1.05); /* Efek membesar */
+    transition: all 0.3s ease-in-out;
+}
+
+
+.hok_news_list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+/* Styling untuk kartu berita */
+.hok_news_list li {
+  margin: 50px !important; /* Meningkatkan margin antar kartu */
+  background-color: #1e1e30;
+  border: 1px solid rgba(242, 201, 76, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+
+/* Efek hover */
+.hok_news_list li:hover {
+  transform: scale(1.1) rotate(1deg);
+  border-color: var(--primary-gold-color); /* Border emas cerah */
+  box-shadow: 0 10px 20px rgba(242, 201, 76, 0.6);
+  transition: all 0.4s ease;
+
+}
+
+
+.hok_news_list li {
+    opacity: 0;
+    transform: translateY(30px); /* Elemen sedikit turun awalnya */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.hok_news_list li.show {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+
+.hok_news_img img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+
+.hok_news_img img:hover {
+  transform: scale(1.1);
+}
+
+
+.hok_news_list li:hover .hok_news_img img {
+    transform: scale(1.08); /* Zoom-in gambar saat hover */
+}
+
+
+/* Efek highlight tambahan */
+.hok_news_list li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px; /* Sama dengan radius kartu */
+    background: rgba(255, 215, 0, 0.1); /* Highlight emas saat hover */
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+
+.hok_news_list li:hover::after {
+    opacity: 1;
+}
+
+
+/* Ukuran default untuk kartu berita */
+.hok_news_list li {
+  margin: 0 10px; /* Margin antar kartu */
+
+  width: 250px; /* Ukuran default untuk layar besar */
+}
+
+
+.news_btnbox {
+  width: 100%;
+  height: auto;   
+  margin-top: 30px; /* Tambahkan jarak di atas tombol */
+  background: url(/img/more_line.png) no-repeat;
+  background-size: calc(1704 / var(--screen-width) * var(--screen-maxwidth)) calc(7 / var(--screen-width) * var(--screen-maxwidth));
+  background-position: 50% calc(21 / var(--screen-width) * var(--screen-maxwidth));
+}
+
+.more_btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #ffd700; /* Warna teks emas */
+  border: 2px solid #ffd700; /* Border emas */
+  border-radius: 20px; /* Border melengkung */
+  background: transparent; /* Tetap transparan */
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Transisi halus */
+  text-decoration: none; /* Hilangkan garis bawah */
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+
+}
+
+.more_btn:hover, .more_btn:focus {
+  color: #120d1e; /* Warna teks kontras saat hover */
+  background-color: #ffd700; /* Latar belakang emas saat hover */
+  border-color: #f2c94c; /* Border lebih cerah saat hover */
+  transform: scale(1.05); /* Efek membesar */
+  box-shadow: 0 8px 16px rgba(255, 204, 0, 1);
+
+}
+
+/* Tampilan responsif pada layar kecil */
+@media (max-width: 768px) {
+    .hok_news_list {
+        flex-direction: column; /* Ubah layout menjadi kolom */
+        align-items: center; /* Pusatkan elemen */
+    }
+
+    .hok_news_list li {
+        width: 90%; /* Sesuaikan lebar kartu */
+        margin-bottom: 15px; /* Spasi antar elemen */
+    }
+}
+
+
+/* Tampilan ekstra kecil, misalnya pada ponsel */
+@media (max-width: 480px) {
+  .hok_news_list li {
+    transition: none;
+  }
+
+  .hok_news_list li:hover {
+      transform: none;
+      box-shadow: none;
+  }
+
+  .hok_news_img img {
+      transform: none;
+  }
+
+  /* Sesuaikan font dalam kartu berita */
+  .hok_news_des {
+      font-size: 1em; /* Kurangi ukuran font pada deskripsi */
+  }
+
+  .hok_news_destime {
+      font-size: 0.8em; /* Kurangi ukuran font pada tanggal */
+  }
+}
+/* Pengaturan padding dan margin untuk layar kecil */
+
+@media (max-width: 768px) {
+  .hok_news {
+      padding: 30px 10px; /* Mengurangi padding bagian atas dan bawah */
+  }
+
+  .hok_news_tit1 {
+      font-size: 1.8em; /* Mengurangi ukuran judul pada layar kecil */
+      margin-bottom: 20px;
+  }
+
+  .hok_news_des {
+      padding: 10px; /* Mengurangi padding di dalam kartu berita */
+  }
+
+  .news_btnbox {
+      margin-top: 15px;
+  }
+}
+
+/* Ukuran teks pada layar ekstra kecil */
+@media (max-width: 480px) {
+  .hok_news_tit1 {
+      font-size: 1.5em; /* Ukuran judul lebih kecil */
+  }
+
+  .hok_news_des {
+      font-size: 0.9em; /* Deskripsi berita lebih kecil */
+  }
+
+  .hok_news_destime {
+      font-size: 0.75em; /* Ukuran tanggal lebih kecil */
+  }
+}
+
+/* Menyesuaikan latar belakang untuk layar kecil */
+@media (max-width: 768px) {
+  .hok_news {
+      background-attachment: scroll; /* Menonaktifkan efek parallax pada layar kecil */
+      background-position: center; /* Fokuskan latar belakang di tengah */
+  }
+}
+
+/* Tombol lebih kecil dan proporsional */
+@media (max-width: 768px) {
+  .more_btn {
+      padding: 8px 18px;
+      font-size: 0.85em;
+  }
+}
+
+
+
+
+/* Teks di dalam kartu */
+.hok_news_des {
+  padding: 15px !important;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 20px !important; /* Meningkatkan jarak antara deskripsi dan elemen di bawahnya */
+}
+
+  
+  .hok_news_destime {
+    font-size: 14px;
+    color: #e6b800; /* Warna emas dengan sedikit rona oranye */
+    margin-bottom: 10px;
+    display: block; /* Tampilkan dalam satu baris penuh */
+  }
+  
+  /* Efek tambahan */
+  .hok_news_list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+    border-radius: 16px; /* Sama dengan radius kartu */
+  }
+  
+  .hok_news_list li:hover::before {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.2), transparent); /* Efek aksen merah tua */
+    opacity: 1; /* Efek overlay saat hover */
+    border-radius: 16px; /* Sama dengan radius kartu */
+}
+
+
+
+
+                  /* HOK PART 2 */
+
+
+
+
+                
+body {
+  font-family: 'Poppins', sans-serif; /* Ganti dengan font serupa */
+  background-color: #1a1a1d; /* Warna latar belakang gelap */
+}
+
+.game-section .game-heading {
+  font-size: 2.5rem; /* Ukuran font heading */
+  font-weight: bold;
+  text-align: center;
+  color: #ffcc00; /* Warna kuning keemasan */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+  margin-bottom: 300px;
+  margin-top: 100px;
+}
+
+.features-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #f39c12; /* Warna kuning oranye */
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+
+}
+
+.feature-item {
+    flex: 0 0 auto; /* Membuat box tidak mengecil dan tetap horizontal */
+    width: 400px; /* Lebar tetap untuk tiap box */
+    background: linear-gradient(145deg, #333, #222);
+    border-radius: 10px;
+    padding: 20px;
+    color: #f39c12;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), -4px -4px 8px rgba(50, 50, 50, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  color: #ffffff; /* Warna putih saat dihover */
+  text-shadow: 2px 2px 12px rgba(242, 201, 76, 0.8); /* Bayangan emas saat dihover */
+  transform: scale(1.05); /* Efek membesar */
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #dcdcdc; /* Warna teks terang */
+  line-height: 1.5;
+  margin-top: 10px;
+  
+  
+}
+
+.feature-item p:hover {
+  
+    color: #ffffff; /* Warna putih saat dihover */
+    text-shadow: 5px 5px 12px rgba(242, 201, 76, 0.8); /* Bayangan emas saat dihover */
+    transform: scale(1.05); /* Efek membesar */
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+ 
+
+
+.game-section {
+  position: relative;
+  background-image: url(/img/kv.jpg); /* Replace with the URL of your new background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This will create the parallax effect */
+  background-repeat: no-repeat;
+  padding: 100px 0; /* Adjust padding to ensure your content fits well */
+  color: #ffffff; /* Ensures text is readable on the background */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75); /* Optional: Adds a shadow to text for better visibility */
+}
+.game-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+  z-index: 1;
+}
+
+.game-section * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.feature-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+.feature-tile {
+  background: linear-gradient(135deg, #0000009f, #2c2f54); /* Modern gradient background */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.feature-tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #2c2f54, #1a1f36); /* Invert gradient on hover */
+}
+
+.feature-tile h3 {
+  font-size: 1.8rem;
+  color: #ffd700; /* Gold color for the title */
+  margin-bottom: 10px;
+}
+
+.feature-tile p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+.feature-tile i {
+  font-size: 2.5rem;
+  color: #ffd700; /* Gold color */
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Container for Game Features */
+.features-container {
+  display: flex;
+  color: #ffd700; /* Warna teks emas */
+  transition: all 0.3s ease-in-out; /* Transisi halus */
+  cursor: pointer;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #f39c12;
+  margin: 80px auto;
+  max-width: 1000px;
+  text-align: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+  gap: 20px;
+  border-image-slice: 1;
+  border-width: 5px;
+  scroll-behavior: smooth; /* Animasi scroll halus */
+
+}
+
+
+.features-container:hover, .features-container:focus {
+  color: #120d1e; /* Warna teks kontras saat hover */
+  background-color: #ffffff61; /* Latar belakang emas saat hover */
+  border-color: #f2c94c; /* Border lebih cerah saat hover */
+  transform: scale(1.05); /* Efek membesar */
+}
+
+/* Title for Game Features */
+.features-title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Individual Feature Box */
+.feature-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.8); /* Dark background for better visibility */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feature-box h4 {
+  color: #FFD700; /* Gold color for feature titles */
+}
+
+.feature-box p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+@media (max-width: 768px) {
+  .features-container {
+      padding: 10px;
+      margin: 10px;
+  }
+
+  .game-heading {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .features-title {
+      font-size: 1.5rem;
+  }
+
+  .feature-box {
+      margin-top: 10px;
+      padding: 10px;
+  }
+}
+
+  
+  
+  @media (max-width: 768px) {
+    .game-section {
+        background-attachment: scroll; /* Fixes background scrolling issues on mobile */
+        background-image: url(/img/kv.jpg); /* Optional: alternative image for mobile */
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+  .game-section h1 {
+      font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+  .game-section h2 {
+      font-size: 1.5rem;
+  }
+  .game-section p {
+      font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .feature-section {
+      padding: 10px; /* Less padding for mobile */
+  }
+
+  .feature-tile {
+      margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+}
+
+
+
+@keyframes hoverGlow {
+  0% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+  50% { box-shadow: 0 8px 16px rgba(255, 215, 0, 0.5); } /* Gold glow */
+  100% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+}
+
+.feature-tile:hover {
+  animation: hoverGlow 0.5s ease-in-out forwards;
+}
+
+
+/* Styles for tablets */
+@media (min-width: 768px) {
+  .feature-tile {
+      padding: 20px; /* More padding on larger devices */
+  }
+}
+
+/* Styles for desktops */
+@media (min-width: 1024px) {
+  .feature-section {
+      max-width: 960px; /* Restricts max width for large screens */
+      margin: auto; /* Centers the section horizontally */
+  }
+}
+
+img, video {
+  max-width: 100%; /* Ensures they never overflow their container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+@media (max-width: 1024px) {
+  .game-heading, .features-title {
+      font-size: 2rem; /* Adjust title size for tablets */
+  }
+
+  .feature-tile h3 {
+      font-size: 1.5rem; /* Smaller heading for feature cards */
+  }
+
+  .feature-tile p {
+      font-size: 0.95rem; /* Smaller paragraph text */
+  }
+}
+
+@media (max-width: 768px) {
+  .game-heading, .features-title {
+      font-size: 1.8rem; /* Smaller size for smaller tablets */
+  }
+
+  .feature-tile {
+      padding: 15px;
+  }
+
+  .feature-tile h3 {
+      font-size: 1.3rem; /* Smaller heading for mobile */
+  }
+
+  .feature-tile p {
+      font-size: 0.85rem; /* Smaller paragraph text */
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-section {
+      grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .feature-tile {
+      width: 100%; /* Full width */
+      padding: 10px; /* Less padding */
+  }
+}
+
+
+
+
+                      
+              /* HOK PART 3 --MAP--  */
+
+
+
+
+
+/* Gaya untuk subjudul */
+.map-section-title .sub_title {
+  font-size: 1.5rem;          /* Ukuran font subjudul */
+  color: #ffffff;             /* Warna emas yang sedikit lebih redup */
+  text-align: center;
+  margin-top: 10px;           /* Spasi antara judul dan subjudul */
+  margin-bottom: 50px;        /* Spasi antara subjudul dan carousel */
+  font-weight: 300;           /* Font-weight ringan untuk tampilan elegan */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+}
+.map-section {
+  padding-top: 80px;
+  padding-bottom: 3px;
+  color: #ffcc00; /* Warna emas */
+  text-align: center;
+  position: relative;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+}
+
+.map-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Overlay gelap untuk meningkatkan keterbacaan */
+  z-index: 1;
+}
+
+.map-section * {
+  position: relative;
+  z-index: 2;
+}
+.carousel-item video {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item video:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.5); /* Cahaya emas saat hover */
+}
+.carousel-indicators li {
+  background-color: #ffd700; /* Warna emas */
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators li.active {
+  background-color: #ffffff; /* Warna putih untuk indikator aktif */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Efek cahaya untuk indikator aktif */
+}
+.map-item h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #aa7f00; /* Warna emas yang lebih cerah */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.map-item p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.full-video {
+  width: 800vw !important;       /* Lebar penuh */
+  height: 70vh !important;       /* Tinggi 40% dari layar */
+  object-fit: cover !important;  /* Menjaga proporsional */
+  border-radius: 10px !important; /* Efek rounded */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7) !important; /* Bayangan */
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .full-video {
+      height: 30vh !important;   /* Tinggi 30% untuk layar kecil */
+  }
+}
+
+@media (max-width: 768px) {
+    .map-section-title .sub_title {
+        font-size: 1.2rem;      /* Ukuran font lebih kecil di layar kecil */
+    }
+}
+
+@media (max-width: 768px) {
+  .map-section {
+      padding: 50px 0;
+      background-attachment: scroll; /* Memperbaiki masalah background pada mobile */
+  }
+
+  .map-item h3 {
+      font-size: 1.5rem;
+  }
+
+  .map-item p {
+      font-size: 1rem;
+  }
+}
+
+#mapCarousel {
+  scroll-behavior: smooth;
+}
+
+.carousel-item video:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+                /* TABS */
+
+
+
+
+
+
+/* Bagian utama hero section */
+.hero_section {
+  text-align: center;
+  padding: 100px 0;
+  padding-bottom: 15%;
+  background-image: url(../img/bg1.jpg); /* Gambar latar */
+  background-size: cover; /* Mengisi seluruh area */
+  background-position: center;
+  background-attachment: fixed; /* Agar gambar tetap di posisi saat di-scroll */
+  color: var(--text-color);
+  position: relative;
+  text-align: center;
+}
+
+.hero_section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk meningkatkan keterbacaan */
+  z-index: 1;
+}
+
+.hero_section * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Judul dan Subjudul */
+.hero_title {
+  font-weight: bold;
+  color: #aa7f00; /* Warna emas */
+  margin-top: 20px; /* Sesuaikan jarak sesuai kebutuhan */
+  font-size: 1.5em; /* Ukuran font untuk tampilan mobile */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+}
+
+.hero_subtitle {
+  font-size: 1.5em;
+  color: #ffffff;
+  display: block;
+  margin-top: 10px;
+
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+}
+
+/* Gaya untuk navigasi tab */
+#heroTabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+#heroTabs .nav_item {
+  margin: 0 10px;
+}
+
+#heroTabs .nav_link {
+  padding: 10px 20px;
+  background-color: #ffd700;
+  color: #1a1a1d;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#heroTabs .nav_link:hover,
+#heroTabs .nav_link.active {
+  background-color: #f39c12;
+  color: #fff;
+}
+.tab-pane {
+  transition: opacity 0.5s ease;
+}
+
+
+/* Kontainer utama untuk hero card */
+.hero_card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Hero card dengan background foto */
+.hero_card {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Memastikan kartu mengisi penuh kontainer */
+  max-width: 1500px; /* Tentukan lebar maksimal yang sesuai */
+  height: 409px; /* Tentukan tinggi yang tetap untuk keseragaman */
+  border-radius: 16px;
+  box-shadow: 0 8px 16px #aa7f00;
+  align-items: center;
+  gap: 40px; /* Jarak antara gambar dan video */
+  background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
+  background-image: url(/img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+  background-position: center; /* Menempatkan gambar di tengah */
+  background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+}
+
+
+.hero_image_container {
+  width: 100%;
+  height: 100%; /* Pastikan kontainer juga penuh */
+}
+
+.hero_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important; /* Memastikan gambar memenuhi kontainer tanpa ada ruang kosong */
+  border-radius: 16px; /* Hapus atau sesuaikan radius jika perlu */
+  box-shadow: #f2c94c; /* Hapus shadow untuk tampilan yang lebih flat */
+}
+
+
+
+/* Video Hero di sebelah kanan dalam bingkai lingkaran */
+.video_circle_container {
+  position: relative;
+  width: auto;
+  height: auto;
+  -webkit-animation: pt4trans 0.5s 0.7s 1 both;
+  animation: pt4trans 0.5s 0.7s 1 both;
+  right: 10%;
+  background: url(../img/v_box.png) no-repeat 100%/100%;
+}
+
+
+.hero_video {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url(../img/video_mask.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  overflow: hidden;
+  -webkit-animation: pt4trans 0.5s 0.7s 1 both;
+  animation: pt4trans 0.5s 0.7s 1 both;
+  
+}
+@-webkit-keyframes pt4trans {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(calc(50 / var(--screen-width) * var(--screen-maxwidth)), 0);
+    transform: translate(calc(50 / var(--screen-width) * var(--screen-maxwidth)), 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes pt4trans {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(calc(50 / var(--screen-width) * var(--screen-maxwidth)), 0);
+    transform: translate(calc(50 / var(--screen-width) * var(--screen-maxwidth)), 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+.hero_card:hover .hero_overlay {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+
+/* Informasi nama dan role */
+.hero_overlay {
+    position: absolute; /* Membuat overlay berada di atas konten lain */
+    top: 40%; /* Jarak dari atas */
+    left: 50%; /* Menggeser dari kiri */
+    transform: translateX(-50%); /* Menggeser ke kiri setengah lebar overlay */
+    text-align: center; /* Memusatkan teks di dalam overlay */
+    color: #aa7f00; /* Warna teks */
+    z-index: 2; /* Memastikan overlay berada di atas video */
+}
+
+.hero_name {
+    font-size: 1.5em; /* Ukuran font untuk nama hero */
+    font-weight: bold;
+}
+
+.hero_role {
+    font-size: 1em; /* Ukuran font untuk role hero */
+    font-style: italic; /* Membuat font miring untuk role */
+}
+.hero_name, .hero_role {
+  color: #ffd700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero_card:hover .hero_name, .hero_card:hover .hero_role {
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(242, 201, 76, 0.8);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+}
+
+@media (max-width: 768px) {
+  /* Pengaturan hero_card untuk tampilan mobile */
+  .hero_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      gap: 0;
+      background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
+      background-image: url(/img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      max-width: 90%;
+      height: auto;
+      margin: 0 auto 15px auto;
+      overflow: hidden;
+      position: relative; /* Tambahkan relative agar posisi absolute dalam hero_card */
+
+  }
+
+  /* Pengaturan video agar tampil di atas */
+  .video_circle_container {
+      order: -1; /* Atur agar video berada di urutan pertama */
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      background: none;
+      border-radius: 10px 10px 0 0; /* Radius di bagian atas */
+      right: auto;
+  }
+
+  .hero_video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      -webkit-mask-image: none;
+      border-radius: 10px 10px 0 0; /* Radius di bagian atas */
+
+  }
+
+  /* Pengaturan gambar agar tampil di bawah */
+  .hero_image_container {
+      order: 1; /* Atur agar gambar berada di urutan kedua */
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0 0 10px 10px; /* Radius di bagian bawah */
+      position: relative; /* Menjadikan container ini sebagai konteks untuk posisi absolute */
+
+  }
+
+  .hero_image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
+
+  /* Pengaturan hero_name dan hero_role agar tetap rapi */
+  .hero_name, .hero_role {
+      font-size: 1.2em;
+      color: #ffd700;
+      text-align: top;
+      top: 190px; /* Posisi di bagian bawah gambar */
+      left: 120px; /* Posisi di sisi kiri dalam gambar */
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+  }
+
+  .hero_name {
+      font-weight: bold;
+  }
+
+  .hero_role {
+      font-style: italic;
+      font-size: 1em;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  #heroTabs .nav_link {
+      font-size: 0.9em; /* Sesuaikan ukuran font untuk mobile */
+      padding: 8px 5px;
+  }
+  #heroTabs {
+      margin-top: 10px;
+      
+  }
+}
+
+
+
+
+
+
+            /*  --HERO--  */
+
+
+
+
+
+
+/* Gaya umum untuk kontainer utama */
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  height: 100;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: url(/img/pt5.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Overlay efek gradasi */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sesuaikan transparansi */
+  z-index: 1;
+}
+.hero-section * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-section-content {
+  position: relative;
+  z-index: 2; /* Menempatkan konten di atas overlay */
+  text-align: center;
+}
+
+/* Gaya untuk judul utama */
+.main-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #aa7f00;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+}
+
+/* Gaya untuk sub-judul */
+.sub-title {
+  font-size: 1.5em;
+  color: #e6b800;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+  display: block;
+  margin: 10px 0 20px;
+}
+
+/* Gaya untuk teks tambahan */
+.additional-text {
+  font-size: 1em;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Efek bayangan */
+
+}
+
+/* Kontainer untuk role dalam kolom vertikal */
+.roles-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-mask-image:url(../img/herobg_mask.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size:200% 100%;
+  -webkit-mask-position: center center;
+  -webkit-box-sizing: border-box;
+}
+
+/* Setiap kolom untuk role */
+.role-column {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Judul di baris pertama, konten grid di baris kedua */
+  align-items: start;
+  width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+  margin: 10px;
+  border: 1px solid #f39c12;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+
+/* Pembungkus Grid untuk Membatasi Area Scroll */
+.hero-wrapper {
+   overflow: hidden; /* Membatasi area grid */
+   height: 690px; /* Atur tinggi pembungkus */
+   width: 100%;
+   position: relative;
+  
+}
+/* Grid vertikal untuk hero */
+.hero-grid-vertical {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+
+
+/* Gaya untuk setiap kartu hero */
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #1e1e30;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.hero-card {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #ffd700, #f39c12) 1;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+.hero-card:hover {
+  transform: scale(1.1) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(242, 201, 76, 0.6);
+  border-color: #ffd700;
+  transition: all 0.4s ease;
+
+}
+
+
+.hero-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.5s ease;
+}
+
+.hero-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Nama hero */
+.hero-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #f39c12;
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  text-shadow: 0px 2px 4px rgb(0, 0, 0);
+
+
+}
+
+
+.role-title {
+    display: flex;
+    justify-content: center; /* Pusatkan elemen secara horizontal */
+    gap: 135px; /* Jarak antar elemen */
+    flex-wrap: wrap; /* Agar elemen turun ke baris baru jika ruang tidak cukup */
+    margin-top: 20px; /* Jarak dari elemen di atasnya */
+}
+
+.role-title-item {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700; /* Warna teks emas */
+    text-transform: uppercase;
+    background-color: #333333; /* Latar belakang hitam untuk kontras */
+    padding: 8px 12px; /* Padding untuk jarak dalam elemen */
+    border-radius: 5px; /* Membuat sudut melengkung */
+}
+
+
+@media (max-width: 768px) {
+  .main-title {
+      font-size: 2em;
+  }
+  .sub-title {
+      font-size: 1.2em;
+  }
+  .hero-card {
+      margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .roles-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      padding: 50px 20px;
+  }
+  .main-title {
+      font-size: 2em;
+  }
+  .hero-card {
+      flex-direction: column;
+      padding: 20px;
+      gap: 10px;
+  }
+}
+
+
+
+
+.hero-name, .hero-role {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.hero-card:hover .hero-name, .hero-card:hover .hero_role {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-section, .game-section, .map-section {
+      padding: 50px 10px;
+  }
+
+  .game-heading, .features-title {
+      font-size: 1.5rem;
+  }
+
+  .hero-card {
+      flex-direction: column;
+      gap: 20px;
+  }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ffcc00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-section-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.hero-section .cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #1a1a1d;
+  background-color: #ffcc00;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-section .cta-button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+.hero-section {
+  background-attachment: fixed;
+}
+
+
+
+/* Animasi scroll dengan durasi yang lebih panjang untuk efek halus */
+@keyframes scrollVertical {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-50%); /* Setengah dari konten untuk mengulang lebih mulus */
+  }
+}
+
+/* Terapkan animasi looping */
+.scrolling {
+  animation: scrollVertical 20s linear infinite; /* Tambahkan durasi agar scroll lebih lambat */
+}
+ 
+
+
+
+
+
+
+            /* CERITA KAMI */
+
+
+
+
+
+/* Bagian Utama Cerita Kami */
+.our-story-section {
+  padding: 100px 0;
+  background-image: url(/img/bg1.jpg); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Menutupi seluruh area */
+  background-position: center; /* Memusatkan gambar */
+  background-attachment: fixed; /* Memberikan efek parallax pada background */
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.our-story-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sesuaikan transparansi */
+  z-index: 1;
+}
+.our-story-section * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+/* Judul dan Deskripsi Bagian */
+.story-title {
+  font-size: 3rem;
+  color: #ffd700; /* Warna Emas */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.story-description {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Kontainer Kartu Cerita */
+.story-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Kartu Cerita Individu */
+.story-card {
+  background: #2c2f54;
+  border: 1px solid rgba(242, 201, 76, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(242, 201, 76, 0.7);
+}
+
+/* Gaya Gambar di Kartu Cerita */
+.story-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.story-card:hover .story-img {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(242, 201, 76, 0.7);
+}
+
+/* Judul Kecil di Kartu Cerita */
+.story-heading {
+  color: #ffd700;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+/* Deskripsi di Kartu Cerita */
+.story-text {
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Responsif untuk Tampilan Mobile */
+@media (max-width: 768px) {
+  .story-title {
+      font-size: 2rem;
+  }
+
+  .story-description {
+      font-size: 1rem;
+      max-width: 100%;
+  }
+
+  .story-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .story-card {
+      width: 90%;
+  }
+}
+
+.story-card {
+  opacity: 0; /* Set awal agar kartu tidak terlihat */
+  transform: translateY(30px); /* Awalnya sedikit di bawah posisi normal */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek smooth */
+}
+
+.story-card.show {
+  opacity: 1; /* Kartu akan terlihat saat memiliki kelas 'show' */
+  transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+@media (max-width: 600px) {
+  .story-title {
+      font-size: 2rem;
+  }
+
+  .story-description {
+      font-size: 1rem;
+      max-width: 90%;
+      margin: 0 auto 30px;
+  }
+
+  .story-card {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .story-cta-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+}
+
+
+
+
+
+
+
+/* --HOK SECTION-- */
+
+
+
+
+.hok-mod-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hok-mod-mask {
+  display: block;
+  width: 100%;
+  height: calc(1080 / var(--screen-width) * var(--screen-maxwidth));
+  background: url(../img/yun_mask.png) no-repeat center center;
+  background-size: cover;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 15;
+}
+.hok-mod-mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sesuaikan transparansi */
+  z-index: 1;
+}
+.hok-mod-mask * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hok-mod-image-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hok-mod-image {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hok-mod-lazy-image {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Overlay untuk konten */
+.hok-mod-overlay {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  right: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  z-index: 15; /* Pastikan overlay di atas gambar */
+}
+
+.hok-mod-overlay h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hok-mod-overlay p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .hok-mod-overlay h5 {
+      font-size: 1.0rem;
+    display: none;      
+      
+  }
+
+  .hok-mod-overlay p {
+      font-size: 0.9rem;
+      display: none;
+  }
+}
+
+
+/* --HOK FOOTER-- */
+
+
+
+
+.hok_fot {
+  width: 100%;
+  height: calc(704 / var(--screen-width) * var(--screen-maxwidth));
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  z-index: 60;
+}
+
+.hok_store {
+  width: 100%;
+  height: calc(288 / var(--screen-width) * var(--screen-maxwidth));
+  background: url(../img/bot_store.jpg) no-repeat;
+  background-size: 100% 100%;
+  padding-top: calc(1 / var(--screen-width) * var(--screen-maxwidth));
+  position: relative;
+  z-index: 30;
+}
+
+.hok_store_btnbox {
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+  margin: calc(60 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+}
+.hok_store_btnbox a {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50 / var(--screen-width) * var(--screen-maxwidth));
+  height: calc(50 / var(--screen-width) * var(--screen-maxwidth));
+  margin: 0 calc(12 / var(--screen-width) * var(--screen-maxwidth));
+  background-size: 100% 100%;
+}
+.hok_store_btnbox a.hok_store_btn1 {
+  background: url(../img/store_discord.png) no-repeat;
+  background-size: 100% 100%;
+}
+.hok_store_btnbox a.hok_store_btn2 {
+  background: url(../img/store_facebook.png) no-repeat;
+  background-size: 100% 100%;
+}
+.hok_store_btnbox a.hok_store_btn3 {
+  background: url(../img/store_twitter.png) no-repeat;
+  background-size: 100% 100%;
+}
+.hok_store_btnbox a.hok_store_btn4 {
+  background: url(../img/store_youtube.png) no-repeat;
+  background-size: 100% 100%;
+}
+.hok_store_para {
+  width: 100%;
+  text-align: center;
+  font-size: calc(24 / var(--screen-width) * var(--screen-maxwidth));
+  color: #242424;
+  line-height: calc(30 / var(--screen-width) * var(--screen-maxwidth));
+  margin: calc(28 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+}
+
+.lang_en .hok_store_para {
+  display: none;
+}
+
+.hok_store_pay {
+  display: block;
+  height: calc(60 / var(--screen-width) * var(--screen-maxwidth));
+}
+
+.hok_store_pay,
+.hok_app_store,
+.hok_apk_download {
+  height: 5.1vh;
+}
+.hok_store_para {
+  width: 100%;
+  text-align: center;
+  font-size: calc(24 / var(--screen-width) * var(--screen-maxwidth));
+  color: #242424;
+  line-height: calc(30 / var(--screen-width) * var(--screen-maxwidth));
+  margin: calc(28 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+}
+
+.hok_stbox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 73.3vh;
+  margin: 0 !important;
+  text-align: center;
+  visibility: hidden;
+}
+.lang_en .hok_stbox {
+  visibility: hidden;
+}
+
+.lang_de .hok_stbox,
+.lang_fr .hok_stbox,
+.lang_id .hok_stbox,
+.lang_ms .hok_stbox,
+.lang_ar .hok_stbox,
+.lang_br .hok_stbox,
+.lang_ru .hok_stbox,
+.lang_tr .hok_stbox,
+.lang_cn .hok_stbox,
+.lang_tw .hok_stbox,
+.lang_es .hok_stbox,
+.lang_my .hok_stbox {
+  visibility: visible;
+}
+.hok_stbox a {
+  margin: 0 1vh;
+}
+
+.hok_stbox a {
+  display: inline-block;
+}
+.hok_stbox a:hover {
+  -webkit-filter: drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px) drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px) drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px);
+  filter: drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px) drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px) drop-shadow(rgba(255, 247, 192, 0.6) 0 0 4px);
+}
+.hok_stbox img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.hok_stbox2 {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: calc(15 / var(--screen-width2) * var(--screen-maxwidth)) auto 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: calc(42 / var(--screen-width2) * var(--screen-maxwidth)) auto 0 !important;
+}
+.hok_stbox2 a {
+  height: calc(60 / var(--screen-width2) * var(--screen-maxwidth)) !important;
+}
+
+.hd_store {
+  display: block;
+  height: calc(60 / var(--screen-width) * var(--screen-maxwidth));
+  z-index: 50;
+}
+
+.hok_app_store,
+.hok_apk_download {
+  display: block;
+  height: calc(60 / var(--screen-width) * var(--screen-maxwidth));
+  position: relative;
+  z-index: 50;
+}
+.hok_stbox a {
+  background: #000;
+  border: rgba(166, 166, 166, 0.72) solid 0.2vh;
+  border-radius: 0.8vh;
+  overflow: hidden;
+}
+
+body .hok_head .hok_stbox {
+  top: 68.3vh;
+}
+body .hok_head .hok_stbox.isreglster {
+  top: 70.3vh;
+}
+body .hok_head .hok_stbox.isreglster a {
+  height: 5.2vh;
+}
+body .hok_head .hok_stbox a {
+  background: #000;
+  height: 8.2vh;
+  border: rgba(166, 166, 166, 0.72) solid 0.2vh;
+  border-radius: 0.8vh;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  body .hok_head .hd_logo {
+    top: 29vh;
+  }
+  body .hok_head .hok_stbox {
+    flex-wrap: wrap;
+  }
+  body .hok_head .hok_stbox {
+    top: 56.3vh;
+  }
+  body .hok_head .hok_stbox.isreglster a {
+    width: 52%;
+  }
+  body .hok_head .hok_stbox a {
+    width: 58%;
+    margin-bottom: 2vh;
+  }
+  body .hok_head .hok_stbox a img {
+    margin: 0 auto;
+  }
+}
+
+.fot_logo {
+  width: 100%;
+  text-align: center;
+  margin: calc(70 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+}
+.fot_logo a {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 calc(36 / var(--screen-width) * var(--screen-maxwidth));
+}
+.fot_logo a:hover {
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
+}
+.fot_logo a:nth-child(1) img {
+  display: block;
+  width: calc(245 / var(--screen-width) * var(--screen-maxwidth));
+}
+.fot_logo a:nth-child(2) img {
+  display: block;
+  width: calc(180 / var(--screen-width) * var(--screen-maxwidth));
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: calc(16 / var(--screen-width) * var(--screen-maxwidth));
+  color: #b7b7b7;
+  line-height: calc(22 / var(--screen-width) * var(--screen-maxwidth));
+  margin: calc(24 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+}
+
+.lang_ar .copyright {
+  direction: ltr;
+}
+
+.copyright_link {
+  margin: calc(62 / var(--screen-width) * var(--screen-maxwidth)) auto 0;
+  text-align: center;
+  font-size: calc(16 / var(--screen-width) * var(--screen-maxwidth));
+  color: #ffffff;
+  line-height: calc(24 / var(--screen-width) * var(--screen-maxwidth));
+}
+.copyright_link a {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 calc(15 / var(--screen-width) * var(--screen-maxwidth));
+  color: #fff;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 900px){
+  .hok_fot {
+    height: auto;
+}
+.hok_fot {
+  overflow: unset;
+}
+.hok_store {
+  width: 100%;
+  height: calc(228 / var(--screen-width2)* var(--screen-maxwidth));
+  background: url(/img/m_bot_store-9bd65d81.jpg) no-repeat 100% / 100%;
+  transform: translateY(-1px);
+}
+.hok_store_btnbox {
+  position: absolute;
+  left: 0;
+  top: calc(20 / var(--screen-width2)* var(--screen-maxwidth));
+  margin: 0;
+}
+.hok_store_btnbox a {
+  width: calc(66 / var(--screen-width2)* var(--screen-maxwidth));
+  height: calc(66 / var(--screen-width2)* var(--screen-maxwidth));
+  margin: 0 calc(10 / var(--screen-width)* var(--screen-maxwidth));
+}
+.hok_store_para {
+  margin-top: calc(140 / var(--screen-width2)* var(--screen-maxwidth));
+  font-size: calc(25 / var(--screen-width2)* var(--screen-maxwidth));
+}
+.lang_en .hok_stbox2 {
+  display: flex;
+  margin: calc(80 / var(--screen-width2)* var(--screen-maxwidth)) auto 0 !important;
+}
+.hok_stbox2 a {
+  margin: 0 1.2vh!important
+}    
+.hok_stbox a {
+  position: relative;
+  z-index: 50;
+}
+.fot_logo a:nth-child(1) img {
+  display: block;
+  width: calc(245 / var(--screen-width2)* var(--screen-maxwidth));
+}
+.fot_logo a:nth-child(2) img {
+  display: block;
+  width: calc(180 / var(--screen-width2)* var(--screen-maxwidth));
+}
+.copyright_link {
+  padding: calc(30 / var(--screen-width2)* var(--screen-maxwidth)) 0;
+  border-top: #111111 solid 1px;
+}
+.copyright_link a {
+  display: block;
+  width: 100%;
+  height: calc(80 / var(--screen-width2)* var(--screen-maxwidth));
+  line-height: calc(80 / var(--screen-width2)* var(--screen-maxwidth));
+  font-size: calc(24 / var(--screen-width2)* var(--screen-maxwidth));
+  text-align: center;
+}
+body #ot-sdk-btn.ot-sdk-show-settings, body #ot-sdk-btn.optanon-show-settings {
+  display: block;
+  width: 100%;
+  height: calc(80 / var(--screen-width2)* var(--screen-maxwidth));
+  line-height: calc(80 / var(--screen-width2)* var(--screen-maxwidth));
+  font-size: calc(24 / var(--screen-width2)* var(--screen-maxwidth));
+  text-align: center;
+}
+}

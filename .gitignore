@@ -1,0 +1,28 @@
+img/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.avif
+*.mp4
+.vscode/
+*.log
+# Abaikan file sementara atau file editor
+.vscode/
+*.log
+
+# Abaikan file sementara lainnya
+*.bak
+
+# Abaikan file cache atau backup
+*.swp
+*.swo
+
+# Abaikan file atau folder tertentu (jika perlu)
+node_modules/
+
+# Abaikan file yang tidak perlu lainnya
+
+# Jangan abaikan folder img dan file gambar/video di dalamnya
+# Tidak ada aturan yang mengabaikan folder img atau ekstensi gambar/video
+.DS_Store
