@@ -158,14 +158,14 @@ left: 0;
   vertical-align: top;
   width: 30px;
   height: 30px;
-  background: url(../img/compra_icon.png) no-repeat 100%/100%;
+  background: url(../images/png/compra_icon.png) no-repeat 100%/100%;
   margin-right: 12px;
 }
 .nv_camp_btn {
   display: block;
   width: 160px;
   height: 35.2px;
-  background: url(../img/camp_icon.png) no-repeat;
+  background: url(../images/png/camp_icon.png) no-repeat;
   background-size: 100% 100%;
   margin-right: 12px;
   margin-top: 16px;
@@ -229,7 +229,7 @@ left: 0;
   transform: translateX(-50%); /* Memposisikan tepat di tengah */
   width: 50px; /* Ukuran tombol lebih kecil */
   height: 50px;
-background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
+  background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
   color: var(--text-color);
   border: none;
   border-radius: 50%; /* Bentuk bulat */
@@ -261,7 +261,7 @@ background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
 /* Latar belakang untuk bagian Berita */
 .hok_news {
   padding: 100px 0;
-  background-image: url(../img/bg1.jpg); /* Gambar latar */
+  background-image: url(../images/jpg/bg1.jpg); /* Gambar latar */
   background-size: cover; /* Mengisi seluruh area */
   background-position: center;
   background-attachment: fixed; /* Agar gambar tetap di posisi saat di-scroll */
@@ -408,7 +408,7 @@ background: linear-gradient(135deg, #ffdd55, #ff7e5f); /* Gradasi warna */
   width: 100%;
   height: auto;   
   margin-top: 30px; /* Tambahkan jarak di atas tombol */
-  background: url(../img/more_line.png) no-repeat;
+  background: url(../images/png/more_line.png) no-repeat;
   background-size: calc(1704 / var(--screen-width) * var(--screen-maxwidth)) calc(7 / var(--screen-width) * var(--screen-maxwidth));
   background-position: 50% calc(21 / var(--screen-width) * var(--screen-maxwidth));
 }
@@ -660,7 +660,7 @@ body {
 
 .game-section {
   position: relative;
-  background-image: url(../img/kv.jpg); /* Replace with the URL of your new background image */
+  background-image: url(../images/jpg/kv.jpg); /* Replace with the URL of your new background image */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* This will create the parallax effect */
@@ -819,30 +819,30 @@ body {
   
   @media (max-width: 768px) {
     .fallback .game-section {
-      background-image: url(../img/m_kv-575dfea7.jpg)
+      background-image: url(../images/jpg/m_kv-575dfea7.jpg)
   }
 
   .webp .game-section {
-      background-image: url(../img/m_kv-ba61c186.webp)
+      background-image: url(../images/webp/m_kv-ba61c186.webp)
   }
 
   .avif .game-section {
-      background-image: url(../img/m_kv-1bf20eba.avif)
+      background-image: url(../images/m_kv-1bf20eba.avif)
   }
     }
 @media screen and (max-width: 1200px) {
   
 
   .fallback .game-section {
-      background-image: url(../img/m_kv-575dfea7.jpg)
+      background-image: url(../images/jpg/m_kv-575dfea7.jpg)
   }
 
   .webp .game-section {
-      background-image: url(../img/m_kv-ba61c186.webp)
+      background-image: url(../images/webp/m_kv-ba61c186.webp)
   }
 
   .avif .game-section {
-      background-image: url(../img/m_kv-1bf20eba.avif)
+      background-image: url(../images/m_kv-1bf20eba.avif)
   }
 
   .pc_hh {
@@ -1104,7 +1104,7 @@ img, video {
   text-align: center;
   padding: 100px 0;
   padding-bottom: 15%;
-  background-image: url(../img/bg1.jpg); /* Gambar latar */
+  background-image: url(../images/jpg/bg1.jpg); /* Gambar latar */
   background-size: cover; /* Mengisi seluruh area */
   background-position: center;
   background-attachment: fixed; /* Agar gambar tetap di posisi saat di-scroll */
@@ -1200,7 +1200,7 @@ img, video {
   align-items: center;
   gap: 40px; /* Jarak antara gambar dan video */
   background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
-  background-image: url(../img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+  background-image: url(../images/png/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
   background-position: center; /* Menempatkan gambar di tengah */
   background-repeat: no-repeat; /* Menghindari pengulangan gambar */
 }
@@ -1229,14 +1229,14 @@ img, video {
   -webkit-animation: pt4trans 0.5s 0.7s 1 both;
   animation: pt4trans 0.5s 0.7s 1 both;
   right: 10%;
-  background: url(../img/v_box.png) no-repeat 100%/100%;
+  background: url(../images/png/v_box.png) no-repeat 100%/100%;
 }
 
 
 .hero_video {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(../img/video_mask.png);
+  -webkit-mask-image: url(../images/png/video_mask.png);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   overflow: hidden;
@@ -1316,7 +1316,7 @@ img, video {
       padding: 0;
       gap: 0;
       background-size: 100% 100%;  /* Mengatur ukuran gambar agar menutupi seluruh area card */
-      background-image: url(../img/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
+      background-image: url(../images/png/mulan_mask.png); /* Ganti URL-GAMBAR-BACKGROUND dengan path foto yang ingin digunakan */
       background-position: center;
       background-repeat: no-repeat;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1425,7 +1425,7 @@ img, video {
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: url(../img/pt5.jpg);
+  background-image: url(../images/jpg/pt5.jpg);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1489,7 +1489,7 @@ img, video {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  -webkit-mask-image:url(../img/herobg_mask.png);
+  -webkit-mask-image:url(../images/png/herobg_mask.png);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size:200% 100%;
   -webkit-mask-position: center center;
@@ -1770,7 +1770,7 @@ img, video {
 /* Bagian Utama Cerita Kami */
 .our-story-section {
   padding: 100px 0;
-  background-image: url(../img/bg1.jpg); /* Ganti dengan path gambar Anda */
+  background-image: url(../images/jpg/bg1.jpg); /* Ganti dengan path gambar Anda */
   background-size: cover; /* Menutupi seluruh area */
   background-position: center; /* Memusatkan gambar */
   background-attachment: fixed; /* Memberikan efek parallax pada background */
@@ -1943,7 +1943,7 @@ img, video {
   display: block;
   width: 100%;
   height: calc(1080 / var(--screen-width) * var(--screen-maxwidth));
-  background: url(../img/yun_mask.png) no-repeat center center;
+  background: url(../images/png/yun_mask.png) no-repeat center center;
   background-size: cover;
   max-height: 100%;
   position: absolute;
@@ -2052,7 +2052,7 @@ img, video {
 .hok_store {
   width: 100%;
   height: calc(288 / var(--screen-width) * var(--screen-maxwidth));
-  background: url(../img/bot_store.jpg) no-repeat;
+  background: url(../images/jpg/bot_store.jpg) no-repeat;
   background-size: 100% 100%;
   padding-top: calc(1 / var(--screen-width) * var(--screen-maxwidth));
   position: relative;
@@ -2074,19 +2074,19 @@ img, video {
   background-size: 100% 100%;
 }
 .hok_store_btnbox a.hok_store_btn1 {
-  background: url(../img/store_discord.png) no-repeat;
+  background: url(../images/png/store_discord.png) no-repeat;
   background-size: 100% 100%;
 }
 .hok_store_btnbox a.hok_store_btn2 {
-  background: url(../img/store_facebook.png) no-repeat;
+  background: url(../images/png/store_facebook.png) no-repeat;
   background-size: 100% 100%;
 }
 .hok_store_btnbox a.hok_store_btn3 {
-  background: url(../img/store_twitter.png) no-repeat;
+  background: url(../images/png/store_twitter.png) no-repeat;
   background-size: 100% 100%;
 }
 .hok_store_btnbox a.hok_store_btn4 {
-  background: url(../img/store_youtube.png) no-repeat;
+  background: url(../images/png/store_youtube.png) no-repeat;
   background-size: 100% 100%;
 }
 .hok_store_para {
@@ -2304,7 +2304,7 @@ body .hok_head .hok_stbox a {
 .hok_store {
   width: 100%;
   height: calc(228 / var(--screen-width2)* var(--screen-maxwidth));
-  background: url(../img/m_bot_store-9bd65d81.jpg) no-repeat 100% / 100%;
+  background: url(../images/jpg/m_bot_store-9bd65d81.jpg) no-repeat 100% / 100%;
   transform: translateY(-1px);
 }
 .hok_store_btnbox {
